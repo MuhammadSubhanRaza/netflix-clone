@@ -1,0 +1,175 @@
+.spacer {
+    background-color: rgb(47, 47, 47);
+    padding: 5px;
+}
+
+header {
+    min-height: 100vh;
+    background: url('../images/nfHeader.jpg');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.header-inner {
+    background-color: rgba(0, 0, 0, 0.65);
+    min-height: 100vh;
+}
+
+nav img {
+    width: 160px;
+    margin: 5px 0px 0px 25px;
+}
+
+nav a {
+    margin: 27px 20px 0px 0px;
+    background-color: rgb(224, 0, 0);
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.inner-content {
+    color: white;
+}
+
+.inner-content h1 {
+    font-weight: 600;
+    font-size: 3.7rem;
+    padding-top: 100px;
+}
+
+.inner-content h4 {
+    font-size: 1.8rem;
+}
+
+.inner-content h6 {
+    font-size: 1.2rem;
+    padding-top: 20px;
+}
+
+.header-form-email {
+    width: 50%;
+    margin: auto;
+    padding-top: 15px;
+}
+
+.header-form-email input[type='text'] {
+    font-size: 1.1rem;
+    padding: 27px 13px;
+}
+
+.header-form-email button {
+    background-color: rgb(218, 0, 0);
+    color: white;
+    font-size: 1.3rem;
+    border: none;
+    outline: none;
+    padding: 0px 25px;
+}
+
+
+/* ------------------ ENJOY SEC ------------------ */
+
+section {
+    color: white;
+    padding: 30px 0px 100px 0px;
+}
+
+section h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    padding-top: 100px;
+}
+
+section h5 {
+    font-size: 1.6rem;
+    padding-top: 25px;
+}
+
+.faq-container {
+    padding-top: 15px;
+    width: 72%;
+    margin: auto;
+}
+
+.faq-item-cont {
+    background-color: rgb(47, 47, 47);
+    margin: 10px 0px;
+}
+
+.faq-item-cont button {
+    background-color: rgb(47, 47, 47);
+    color: white;
+    font-size: 1.7rem;
+}
+
+.faq-item-cont h3 {
+    font-size: 1.7rem;
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.faq-head {
+    background-color: transparent;
+}
+
+.video-holder {
+    background: url('../videos/commercial.mp4');
+    background-size: cover;
+    position: relative;
+}
+
+.video-holder video {
+    width: 100%;
+}
+
+.set-image {
+    position: absolute;
+    width: 200px;
+    top: 0;
+    width: 100%;
+}
+
+.img-holder {
+    position: relative;
+}
+
+
+.img-over-loader {
+    position: absolute;
+    background-color: black;
+    border-radius: 10px;
+    border: solid 2px rgb(102, 102, 102);
+    padding: 8px;
+    width: 300px;
+    top: 215px;
+    left: 60px;
+}
+
+.img-over-loader h5 {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.img-over-loader p {
+    color: rgb(88, 88, 250);
+    padding: 0;
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+}
