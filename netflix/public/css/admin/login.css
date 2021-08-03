@@ -1,0 +1,59 @@
+.main-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.login-container {
+    position: absolute;
+    width: 400px;
+    /* background-color: white; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 25px;
+    color: white;
+}
+
+.login-container p {
+    color: gray;
+}
+
+.login-container img {
+    width: 120px;
+}
+
+.login-container input[type='email'],
+input[type='password'] {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 1px solid gray;
+    padding: 10px 20px;
+    margin-top: 15px;
+    color: white;
+}
+
+.btnLogin {
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    background-color: rgb(194, 0, 0);
+    margin-top: 20px;
+}
+
+.btnSwtich {
+    border: none;
+    outline: none;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    padding: 5px 15px;
+}

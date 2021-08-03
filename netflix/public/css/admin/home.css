@@ -1,0 +1,321 @@
+.big-container {
+    background-color: black;
+    overflow: hidden;
+}
+
+.side-menu {
+    border-right: solid 4px black;
+    min-height: 100vh;
+    background-color: rgb(8, 11, 17);
+    width: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+    /* display: none; */
+    animation: fade 0.5s linear;
+}
+
+@keyframes fade {
+
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+.logo {
+    width: 150px;
+    margin-left: -20px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.side-menu h2 {
+    font-size: 1.2rem;
+    color: rgb(197, 197, 197);
+    padding-top: 15px;
+}
+
+.side-menu p {
+    color: rgb(105, 105, 105);
+    margin: 0;
+}
+
+.social-btns {
+    width: 100%;
+    text-align: center;
+}
+
+.social-btns button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(200, 200, 200);
+    font-size: 1.1rem;
+    margin: 10px 5px;
+    transition: 0.3s;
+}
+
+.social-btns button:hover {
+    color: rgb(73, 73, 73);
+}
+
+.verticle-line {
+    background-color: rgb(49, 49, 49);
+    height: 30px;
+    width: 2px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.nav-btns {
+    padding-top: 20px;
+}
+
+.nav-btns button {
+    width: 100%;
+    color: rgb(199, 199, 199);
+    background-color: transparent;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    padding: 15px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.nav-btns button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-spacer {
+    display: inline-block;
+    width: 30px;
+}
+
+
+/* --------------- MAIN CONTENT ------------ */
+
+.top-nav {
+    background-color: rgb(8, 11, 17);
+    padding: 10px 20px 0px 10px;
+    width: 100%;
+    min-height: 70px;
+}
+
+.main-content {
+    width: 100%;
+}
+
+.btn-nav {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+
+}
+
+.nav-profile {
+    width: 100%;
+}
+
+.nav-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.nav-profile p {
+    color: rgb(216, 216, 216);
+    font-size: 1rem;
+    padding: 10px 10px 0px 20px;
+}
+
+.dropdown-toggle {
+    color: white;
+}
+
+.dropdown-menu {
+    background-color: rgb(8, 11, 17);
+    padding: 15px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    display: block;
+    padding: 10px 0px;
+    transition: 0.2s;
+}
+
+.dropdown-menu li a:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+.view-content {
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(206, 206, 206);
+}
+
+
+/* ----------------------- APPLICATION USERS ---------------- */
+
+
+.applicationusers-container {}
+
+.applicationusers-container input[type='text'],
+input[type='email'],
+input[type='password'] {
+    color: rgb(202, 202, 202);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    border: solid 1px gray;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 7px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.applicationusers-container input[type='text']:focus,
+input[type='email']:focus,
+select:focus {
+    border-color: rgb(255, 255, 255);
+}
+
+.applicationusers-container select {
+    color: rgb(100, 100, 100);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 8px 10px;
+    border: solid 1px gray;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 7px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.applicationusers-container select option {
+    background-color: transparent;
+}
+
+.applicationusers-container input[type='file'] {
+    margin: 15px;
+}
+
+.btnSave {
+    background-color: rgb(212, 0, 0);
+    color: white;
+    padding: 5px 10px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btnSave:hover {
+    background-color: rgb(170, 0, 0);
+}
+
+.tbl-Data {
+    width: 100%;
+}
+
+.tbl-Data thead {
+    background-color: rgb(8, 11, 17);
+}
+
+.tbl-Data thead th {
+    padding: 10px 5px;
+    font-size: 1rem;
+}
+
+.tbl-Data tbody td {
+    padding: 10px 5px;
+}
+
+.applicationusers-container label {
+    color: rgb(170, 0, 0);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+}
+
+
+.txtSearch {
+    color: rgb(228, 228, 228);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 8px 10px;
+    border: solid 1px gray;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 7px;
+    border-radius: 5px;
+}
+
+/* ----------------- NOTIFICATIONS ----------------- */
+
+.notification-success {
+    background-color: rgb(150, 204, 164);
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    animation: fadeout 1s;
+    transition: 0.3s;
+}
+
+.notification-success p {
+    padding: 10px;
+    margin: 0;
+    color: rgb(24, 110, 46);
+}
+
+.notification-success button {
+    background-color: rgb(0, 153, 77);
+    font-weight: 700;
+    outline: none;
+    /* border:solid rgb(255, 255, 255) 1px; */
+    border: none;
+    border-radius: 50%;
+    padding: 0px 7px;
+    color: white;
+
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.notification-success table {
+    width: 100%;
+}

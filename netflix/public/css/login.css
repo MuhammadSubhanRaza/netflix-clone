@@ -1,0 +1,55 @@
+.main-container {
+    background: url('./../images/nfHeader.jpg');
+    min-height: 100vh;
+    background-size: cover;
+
+}
+
+.inner-container {
+    background-color: rgba(0, 0, 0, 0.55);
+    min-height: 100vh;
+}
+
+.inner-container img {
+    width: 200px;
+    margin: 0px 30px;
+}
+
+.login-container {
+    width: 450px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px 70px;
+    box-sizing: border-box;
+    color: rgb(107, 107, 107);
+}
+
+.login-container h2{
+    color: white;
+    font-size: 2rem;
+    padding: 15px 0px;
+}
+
+.login-container input[type='email'],
+input[type='password'] {
+    background-color: rgb(68, 68, 68);
+    border:none;
+    outline: none;
+    color: white;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+}
+
+.login-container button
+{
+    width: 100%;
+    background-color: rgb(197, 0, 0);
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 40px;
+}

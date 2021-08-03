@@ -252,13 +252,55 @@
                 </div>
             </div>
         </div>
+
+           <div class="inner-content text-center">
+               <h6 class="pt-5">Ready to watch? Enter your email to create or restart your membership.</h6>
+               <div class="input-group mb-3 header-form-email">
+                    <input type="text" class="form-control" placeholder="Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button type="button" id="button-addon2">Get Started ></button>
+                </div>
+            </div>     
+
+
     </section>
 
     <div class="spacer">
     </div>
 
-    <footer>
+    <footer p-5>
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6>Questions? Contact us.</h6>
+                </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-md-3">
+                    <a href="#">FAQ</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Speed Test</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">Help Center</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Cookie Preferences</a>
+                    <a href="#">Legal Notices</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">Account</a>
+                    <a href="#">Ways to Watch</a>
+                    <a href="#">Corporate Information</a>
+                    <a href="#">Only on Netflix</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#">Media Center</a>
+                    <a href="#">Terms of use</a>
+                    <a href="#">Contact us</a>
+                </div>
+            </div>
 
+        </div>
     </footer>
 
 

@@ -1,0 +1,139 @@
+body {
+    background-color: white;
+}
+
+
+nav {
+    border-bottom: rgb(224, 224, 224) solid 1px;
+}
+
+nav img {
+    width: 200px;
+    padding: 0px 20px;
+}
+
+nav a {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: black;
+    text-decoration: none;
+    padding: 30px;
+    font-weight: 600;
+}
+
+.sign-up-form {
+    width: 450px;
+    margin: auto;
+}
+
+.sign-up-form p,
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.sign-up-form h1 {
+    font-weight: 600;
+    font-size: 2.4rem;
+}
+
+.sign-up-form h6 {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.sign-up-form input[type='password'] {
+    font-size: 1rem;
+    padding: 18px;
+    width: 100%;
+    background-color: transparent;
+    border: solid 1px gray;
+    outline: none;
+    margin-top: 12px;
+}
+
+.sign-up-form button {
+    background-color: rgb(219, 0, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.sign-up-form .cust-icon {
+    font-size: 1.8rem;
+    color: rgb(216, 0, 0);
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 50%;
+    border: rgb(209, 0, 0) solid 1px;
+}
+
+.offer-container i {
+    color: rgb(216, 0, 0);
+    font-size: 1.3rem;
+}
+
+h5 {
+    padding: 0;
+    margin: 0;
+}
+
+.offer-container table {
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btnOffer {
+    background-color: rgb(219, 0, 0);
+    color: white;
+    font-weight: 500;
+    font-size: 1.3rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.offer-block {
+    background-color: rgb(209, 0, 0);
+    width: 120px;
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    height: 120px;
+    padding-top: 45px;
+}
+
+.offers-ribbon {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+footer {
+    padding: 10px;
+    color: rgb(66, 66, 66);
+    background-color: rgb(240, 240, 240);
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+    display: block;
+    padding: 7px 0px;
+}
+
+footer a:hover {
+    color: rgb(110, 110, 110);
+}
