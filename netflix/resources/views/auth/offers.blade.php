@@ -34,7 +34,14 @@
                     <img src="/images/nfLogo.png" alt="">
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="#">Sign Out</a>
+                    <a  href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>
@@ -43,7 +50,7 @@
     <div class="container offer-container pl-5 pr-5">
         <div class="row">
             <div class="col-md-6">
-                <p class="pt-4">STEP <b>2</b> OF 3</p>
+                <p class="pt-4">STEP <b>3</b> OF 3</p>
                 <h1 style="font-size: 2rem">Choose your plan.</h1>
                 <h5 class="pt-4"><i class="fa fa-check"></i>
                 No commitments, cancel anytime.</h5>
@@ -201,7 +208,7 @@
         <br>
         <div class="row">
             <div class="col-md-12 text-center">
-                <button class="btnOffer">Next</button>
+                <a href="/movies" class="btnOffer">Next</a>
             </div>
         </div>
         <br><br><br><br><br><br>

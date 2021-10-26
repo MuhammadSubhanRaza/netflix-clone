@@ -96,7 +96,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-warning"><i class="fa fa-plus"></i>&nbsp; Add To My List</button>
+                <a href="/movie/addtolist/{{ $movie->id }}" class="btn btn-warning"><i class="fa fa-plus"></i>&nbsp; Add To My List</a>
             </div>
         </div>
     </div>

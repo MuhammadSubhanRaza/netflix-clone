@@ -34,7 +34,14 @@
                     <img src="/images/nfLogo.png" alt="">
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="#">Sign Out</a>
+                    <a  href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>
@@ -54,7 +61,7 @@
          <h5 class="pt-4"><i class="fa fa-check"></i>
         No ads and no extra fees. Ever.</h5>
         <form action="">
-            <button>Next</button>
+            <a href="/offers">Next</a>
         </form>
     </div>
 

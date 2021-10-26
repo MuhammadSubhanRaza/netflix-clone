@@ -18,8 +18,10 @@ class MoviesController extends Controller
         return view('home.index',compact('allMovies','lastRecord','allGenres'));
     }
 
-    public function watch($id)
+    public function watch(Request $request,$id)
     {
+        // Session::put('movie_watch_url',request()->fullUrl());
+        $request->session()->put('movie_watch_url',request()->fullUrl());
         $movie = Movie::findOrFail($id);
         return view('Movies.watch',compact('movie'));
     }
@@ -71,6 +73,19 @@ class MoviesController extends Controller
     {
         $genres = Genre::all();
         return view('admin.movie',compact('genres'));
+    }
+
+    public function moviesList()
+    {
+        $allMovies = Movie::all();
+        return view('admin.allmovies',compact('allMovies'));
+    }
+
+    public function movieDelete($id)
+    {
+        $movie = Movie::find($id);
+        $movie->delete();
+        return redirect('/admin/movie/list');
     }
 }
 

@@ -64,10 +64,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($data['password'])
         ]);
+
     }
+
+
+    public function registerUser()
+    {
+        $data = request()->validate([
+            'userEmail'=>['required','email']
+        ]);
+        $userEmail = $data['userEmail'];
+        return view('auth.register',compact('userEmail'));
+    }
+
 }

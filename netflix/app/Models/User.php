@@ -40,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function prfileImage()
+    {
+        return $this->hasOne(ProfileImage::class);
+    }
+
+    public function movieList()
+    {
+        return $this->hasMany(MovieList::class);
+    }
 }

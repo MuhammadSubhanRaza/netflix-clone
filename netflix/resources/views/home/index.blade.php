@@ -100,7 +100,7 @@
                     <div id="txtSearchContainer">
                         <input type="text" placeholder="Movie Name" class="form-control searchText" id="txtSearch">
                     </div>
-                    <a href="#">Kids</a>
+                    <a href="#">Subhan Raza</a>
                     <button class="btn"><i class="fa fa-bell"></i></button>
                     <img src="/images/moviecover.jpg" style="height:40px;width: 40px" alt="">
                     <div class="btn-group">

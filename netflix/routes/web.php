@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProfileImageController;
+use App\Http\Controllers\MovieListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +27,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/signup',function(){return view('auth.signup');});
-Route::get('/plan',function(){return view('auth.plan');});
-Route::get('/offers',function(){return view('auth.offers');});
+Route::get('/plan',[ProfileImageController::class,'Plan']);
+Route::get('/offers',[ProfileImageController::class,'Offers']);
 Route::get('/movies',[MoviesController::class,'showAllMovies']);
+
 
 // ------------ ADMIN SIDE ------------
 
@@ -43,6 +47,21 @@ Route::get('/movie/watch/{id}',[MoviesController::class,'watch']);
 Route::get('/genre/delete/{id}',[GenreController::class,'delete']);
 
 Route::get('movies/genre/{id}',[MoviesController::class,'genreBased']);
+Route::get('/admin/movie/list',[MoviesController::class,'moviesList']);
 
+Route::get('/admin/movie/delete/{id}',[MoviesController::class,'movieDelete']);
 
+// ------------ REGISTER -------------
+
+Route::post('/registerUser',[RegisterController::class,'registerUser']);
+
+//-------------- PROFILE IMAGE ---------
+
+Route::get('/profileimage',[ProfileImageController::class,'ProfileImage']);
+Route::post('/saveprofile',[ProfileImageController::class,'SaveProfile']);
+
+//-------------- Movie List----------------
+
+Route::get('/movie/addtolist/{id}',[MovieListController::class,'AddToList']);
+Route::get('/myList',[MovieListController::class,'Index']);
 

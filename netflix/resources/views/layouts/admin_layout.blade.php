@@ -111,5 +111,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('#customFileCImage').change(function(e){
+                var source = URL.createObjectURL(e.target.files[0]);
+                $('#cvrImg').attr('src',source)
+            });
+
+            $('#customFileTrailer').change(function(e){
+                var source = URL.createObjectURL(e.target.files[0]);
+                $('#vdTrailer').attr('src',source)
+            });
+
+            $('#customFileMovie').change(function(e){
+                var source = URL.createObjectURL(e.target.files[0]);
+                $('#vdMovie').attr('src',source)
+            });
+        });
+    </script>
 </body>
 </html>

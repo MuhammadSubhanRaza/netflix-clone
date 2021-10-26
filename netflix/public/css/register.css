@@ -1,0 +1,38 @@
+body {
+    background-color: white;
+}
+
+.register-page-logo {
+    width: 200px;
+}
+
+.register-container {
+    width: 450px;
+    min-height: 400px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+.btn-register {
+    background-color: rgb(197, 0, 0);
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 8px;
+    transition: 0.3s;
+    
+}
+
+.btn-register:hover {
+    background-color: rgb(116, 0, 0);
+}
+
+.register-container input[type='email'],
+input[type='password'],
+input[type='text'] {
+    font-size: 1.2rem;
+    border-radius: 0px;
+}

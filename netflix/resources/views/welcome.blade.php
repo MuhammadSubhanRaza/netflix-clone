@@ -38,17 +38,38 @@
                     <img src="/images/nfLogo.png" alt="">
                 </div>
                 <div class="col-md-6 text-right">
-                    <a href="{{ route('login') }}">Sign In</a>
+                    @guest
+                        <a href="{{ route('login') }}">Sign In</a>
+                    @else
+                        <a href="/movies">Go to Movies</a>
+                        <a  href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endguest
+                    
                 </div>
             </nav>
             <div class="inner-content text-center">
                 <h1>Unlimited movies, TV <br> shows, and more.</h1>
                 <h4>Watch anywhere. Cancel anytime.</h4>
                 <h6>Ready to watch? Enter your email to create or restart your membership.</h6>
-                <div class="input-group mb-3 header-form-email">
-                    <input type="text" class="form-control" placeholder="Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button type="button" id="button-addon2">Get Started ></button>
-                </div>
+                <form action="/registerUser" method="POST">
+                    @csrf
+                    <div class="input-group mb-3 header-form-email">
+                        <input required name="userEmail" type="text" class="form-control" placeholder="Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button type="submit" id="button-addon2">Get Started ></button>
+                        @error('userEmail')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </form>
             </div>        
         </div>
     </header>
@@ -255,10 +276,18 @@
 
            <div class="inner-content text-center">
                <h6 class="pt-5">Ready to watch? Enter your email to create or restart your membership.</h6>
-               <div class="input-group mb-3 header-form-email">
-                    <input type="text" class="form-control" placeholder="Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button type="button" id="button-addon2">Get Started ></button>
-                </div>
+               <form action="/registerUser" method="POST">
+                    @csrf
+                    <div class="input-group mb-3 header-form-email">
+                        <input required name="userEmail" type="text" class="form-control" placeholder="Email address" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button type="submit" id="button-addon2">Get Started ></button>
+                        @error('userEmail')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </form>
             </div>     
 
 
