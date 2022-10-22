@@ -21,6 +21,14 @@
                     </select>
                     
                     <input placeholder="Description" type="text" name="description">
+
+                    <select name="PricePlan">
+                        <option>Select Option</option>
+                        <option value="1">For Mobile Users</option>
+                        <option value="2">For Basic Users</option>
+                        <option value="3">For Premium Users</option>
+                        <option value="4">For Standard Users</option>
+                    </select>
                 
                     <br><br>
 

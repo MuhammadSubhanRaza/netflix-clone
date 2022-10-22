@@ -7,8 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <title>{{Session::get('aname')}}'s Persnol Dashboard</title>
 
     <!-- Scripts -->
     
@@ -25,16 +27,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+<style>
+    a{
+        text-decoration: none;
+        color: white
+    }
+    a:hover{
+        text-decoration: none;
+        color: white
+    }
+</style>
 <body>
 
     <div class="big-container d-flex">
         <div class="side-menu" id="sidemenu">
                 <div class="content-sidenav" style="width: 270px;text-align: center" id="contentSideNav">
-                    <img src="/images/nfLogo.png" class="logo" alt="">
             <br>
-            <img src="/images/pimg11.png" class="avatar" alt="">
-            <h2>David Smith Johnson</h2>
-            <p >davidsmith22@gmail.com</p>
+            <br>
+            <br>
+            <h2>{{Session::get('aname')}}</h2>
+            <p >{{Session::get('aemail')}}</p>
             <div class="social-btns">
                 <button><i class="fa fa-facebook"></i></button>
                 <button><i class="fa fa-instagram"></i></button>
@@ -46,25 +58,31 @@
                     <span class="btn-spacer"></span>
                     <i class="fa fa-home"></i>
                     <span class="btn-spacer"></span> 
-                    home
+                   <a href="http://localhost:8000/admin/home">Home</a>
                 </button>
                 <button>
                     <span class="btn-spacer"></span>
                     <i class="fa fa-users"></i>
                     <span class="btn-spacer"></span> 
-                    Users
+                   <a href="http://localhost:8000/admin/users">Users</a> 
                 </button>
                 <button>
                     <span class="btn-spacer"></span>
                     <i class="fa fa-film"></i>
                     <span class="btn-spacer"></span> 
-                    Movies
+                  <a href="http://localhost:8000/admin/allmovies"> Movies</a> 
                 </button>
                 <button>
                     <span class="btn-spacer"></span>
                     <i class="fa fa-th-list"></i>
                     <span class="btn-spacer"></span> 
-                    Policies
+                   <a href="http://localhost:8000/admin/genre">Generes</a> 
+                </button>
+                <button>
+                    <span class="btn-spacer"></span>
+                    <i class="fa fa-th-list"></i>
+                    <span class="btn-spacer"></span> 
+                   <a href="#">Policies</a> 
                 </button>
 
                 </div>
@@ -82,14 +100,13 @@
                     </div>
                     <div class="col-md-6">
                         <div class="nav-profile d-flex justify-content-end">
-                            <img src="/images/pimg11.png" alt="">
-                            <p>David Smith Johnson</p>
+                            <p>{{Session::get('aname')}}</p>
                             <div class="btn-group">
                                 <button class="btn dropdown-toggle" data-toggle="dropdown">
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu" >
-                                    <li><a href="#"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+                                    <li><a href="/Admin/logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
                                     <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                                 </ul>
                             </div>

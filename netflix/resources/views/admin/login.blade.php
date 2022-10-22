@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Netflix</title>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -31,11 +31,11 @@
     <div class="main-container">
         <div class="login-container text-center">
             <img src="/images/nflogo.png" alt="">
-            <h2>Sign In</h2>
-            <h5 style="color: rgb(141, 141, 141)">admin</h5>
+            <h3 style="color: rgb(141, 141, 141)">Admin Login</h3>
             <p>Please enter your email and password</p>
-            <form action="">
-                <input type="email" placeholder="Email" name="email">
+            <form action="/Post/AdminLogin" method="POST">
+                @csrf
+                <input style="color:black" type="email" placeholder="Email" name="email">
                 <br>
                 <input type="password" placeholder="Password" name="password">
                 <br>
@@ -51,7 +51,6 @@
             </button>
         </div>
     </div>
-
 </body>
 </html>
 

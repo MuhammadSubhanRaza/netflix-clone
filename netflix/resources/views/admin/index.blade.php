@@ -3,6 +3,6 @@
 
 @section('view-set')
 
-    <h1>I am view</h1>
+    <h1 style="color: white">Welcome {{Session::get('aname')}}</h1>
 
 @endsection

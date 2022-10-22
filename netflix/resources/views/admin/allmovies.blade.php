@@ -3,7 +3,7 @@
 
 @section('view-set')
 
-<h6>ALL MOVIES</h6>
+<h2>ALL   MOVIES</h2>
 
 
 
@@ -15,6 +15,7 @@
             <br><br>
         </div>
     </div>
+    <a href="http://localhost:8000/admin/movie/add" style="background:rgb(224, 0, 0);color:white;padding:10px;text-decoration:none;margin-bottom:10px">Add New Movie</a> <br><br>
     <div class="row">
         <div class="col-md-12">
             <table class="tbl-Data">

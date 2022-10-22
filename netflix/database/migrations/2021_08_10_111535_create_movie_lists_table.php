@@ -16,9 +16,14 @@ class CreateMovieListsTable extends Migration
         Schema::create('movie_lists', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('name');
+            $table->string('category');
+            $table->string('description');
+            $table->text('coverImage');
+            $table->text('trailer');
+            $table->text('movie');
             $table->unsignedBigInteger('movie_id');
             $table->timestamps();
-
             $table->index('movie_id');
             $table->index('user_id');
         });

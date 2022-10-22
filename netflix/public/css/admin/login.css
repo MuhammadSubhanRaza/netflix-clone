@@ -23,18 +23,27 @@
     width: 120px;
 }
 
-.login-container input[type='email'],
-input[type='password'] {
+.login-container input[type='email'] {
     width: 100%;
     background-color: transparent;
-    border: none;
     outline: none;
     font-size: 1rem;
     letter-spacing: 1px;
     border: 1px solid gray;
     padding: 10px 20px;
     margin-top: 15px;
-    color: white;
+}
+.login-container input[type='password']{
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+     font-size: 1rem;
+     letter-spacing: 1px;
+     border: 1px solid gray;
+     padding: 10px 20px;
+     margin-top: 15px;
+
+
 }
 
 .btnLogin {

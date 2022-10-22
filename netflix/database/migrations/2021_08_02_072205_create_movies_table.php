@@ -17,6 +17,7 @@ class CreateMoviesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('category');
+            $table->string('PriceplanId');
             $table->string('description');
             $table->text('coverImage');
             $table->text('trailer');

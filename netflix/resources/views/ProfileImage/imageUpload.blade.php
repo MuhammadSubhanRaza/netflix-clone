@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/profileimage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/signup.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Netflix Pakistan - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
 </head>
 <body>
     

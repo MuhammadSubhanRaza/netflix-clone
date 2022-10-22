@@ -11,9 +11,14 @@ class MovieList extends Model
 
     protected $guarded= [];
 
+    public function movie()
+    {
+        return $this->hasMany(Movie::class);
+    }
+
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 
 

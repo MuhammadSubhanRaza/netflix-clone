@@ -5,7 +5,11 @@ use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MoviesController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProfileImageController;
-use App\Http\Controllers\MovieListController;
+use App\Http\Controllers\MoviesListController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminUser;
+use App\Http\Controllers\PricePlanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,11 +38,13 @@ Route::get('/movies',[MoviesController::class,'showAllMovies']);
 
 // ------------ ADMIN SIDE ------------
 
-Route::get('/admin/home',function(){return view('admin.index');});
-Route::get('/admin/login',function(){return view('admin.login');});
-Route::get('/admin/users',function(){return view('admin.applicationusers');});
+Route::get('/admin/home',[AdminController::class,'index']);
+Route::get('/admin/login',[AdminController::class,'AdminLogin']);
+Route::post('/Post/AdminLogin',[AdminController::class,'PostLogin']);
+Route::get('/Admin/logout',[AdminController::class,'Logout']);
+Route::get('/admin/users',[AdminUser::class,'AdminUser']);
 Route::get('/admin/movie/add',[MoviesController::class,'addNewMovie']);
-Route::get('/admin/allmovies',function(){return view('admin.allmovies');});
+Route::get('/admin/allmovies',[MoviesController::class,'adminMovie']);
 Route::get('/admin/genre',[GenreController::class,'index'])->name('/admin/genre');
 Route::post('/admin/genre/add',[GenreController::class,'add']);
 
@@ -62,6 +68,21 @@ Route::post('/saveprofile',[ProfileImageController::class,'SaveProfile']);
 
 //-------------- Movie List----------------
 
-Route::get('/movie/addtolist/{id}',[MovieListController::class,'AddToList']);
-Route::get('/myList',[MovieListController::class,'Index']);
+// Route::get('/myList',[MovieListController::class,'Index']);
+
+
+
+// PricePlan Controller
+
+
+Route::get('/plancreate',[PricePlanController::class,'create']);
+Route::post('/priceplan/post',[PricePlanController::class,'store']);
+
+
+
+//Movielist Controller
+Route::post('/AddMovielist',[MoviesListController::class,'AddtoList']);
+Route::get('/mymovieList',[MoviesListController::class,'showlist']);
+Route::get('/listdelete/{id}', [MoviesListController::class,'destroy']);
+
 

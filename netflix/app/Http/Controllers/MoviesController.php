@@ -3,19 +3,46 @@
 namespace App\Http\Controllers;
 use App\Models\Movie;
 use App\Models\Genre;
+use App\Models\User;
+use App\Models\ProfileImage;
+use Auth;
+
 
 use Illuminate\Http\Request;
 
 class MoviesController extends Controller
 {
+    public function adminMovie(){
 
-    public function showAllMovies()
+        $allMovies=Movie::all();
+        //dd($allMovies);
+        return view('admin.allmovies',compact('allMovies'));
+    }
+
+    public function showAllMovies(Request $request)
     {
+
+        
+        $id=Auth::user()->PriceplanId; 
+        
+        
+        $search=$request['search']?? "";
+        
+
+            $allMovies=Movie::where('name','Like',"%$search%")->get();
+           // dd($allMovies);
+
+
+        $profilepic=ProfileImage::where('user_id','=',$id)->get();
+
+      
+    
         // $allMovies = Movie::all();
-        $allMovies = Movie::orderby('created_at','DESC')->get();
+        $allMovies = Movie::orderby('created_at','ASC')->get();
+     $allMovies =  Movie::where('PriceplanId','=',$id)->get();
         $lastRecord = $allMovies[0];
         $allGenres = Genre::all();
-        return view('home.index',compact('allMovies','lastRecord','allGenres'));
+        return view('home.index',compact('allMovies','lastRecord','allGenres','search','profilepic'));
     }
 
     public function watch(Request $request,$id)
@@ -36,6 +63,8 @@ class MoviesController extends Controller
     }
 
 
+    
+
     public function addMovie(Request $req)
     {
         $data = request()->validate([
@@ -44,7 +73,8 @@ class MoviesController extends Controller
             'description'=>'required',
             'coverImage'=>'required',
             'trailer'=>'required',
-            'movie'=>'required'
+            'movie'=>'required',
+            'PricePlan'=>'required'
         ]);
 
         $imagePath = request('coverImage')->store('uploads','public');
@@ -55,9 +85,11 @@ class MoviesController extends Controller
         $movie->name = $data['movieName'];
         $movie->category = $data['category'];
         $movie->description = $data['description'];
+        $movie->PriceplanId =$data['PricePlan'];
         $movie->coverImage =$imagePath ;
         $movie->trailer =$trailerPath ;
         $movie->movie =$moviePath ;
+
 
         $result = $movie->save();
 

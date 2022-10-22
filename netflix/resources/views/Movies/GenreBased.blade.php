@@ -10,7 +10,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Netflix Generes</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
+
 
 
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
@@ -70,7 +72,7 @@
     }
 </style>
 </head>
-<body>
+<body style="background-color: black">
     
     <nav class="container-fluid">
         <div class="row pl-5 pr-5">
@@ -93,7 +95,7 @@
                         
                     <li><a href="/movies">Movies</a></li>
                     <li><a href="#">Latest</a></li>
-                    <li><a href="#">My List</a></li>
+                    <li><a href="http://localhost:8000/mymovieList">My List</a></li>
                 </ul>
             </div>
             <div class="col-md-6 nav-profile-sec ">
@@ -102,9 +104,9 @@
                     <div id="txtSearchContainer">
                         <input type="text" placeholder="Movie Name" class="form-control searchText" id="txtSearch">
                     </div>
-                    <a href="#">Kids</a>
+                    <a href="#">{{Auth::user()->name}}</a>
                     <button class="btn"><i class="fa fa-bell"></i></button>
-                    <img src="/images/moviecover.jpg" style="height:40px;width: 40px" alt="">
+                    {{-- <img src="/images/moviecover.jpg" style="height:40px;width: 40px" alt=""> --}}
                     <div class="btn-group">
                         <button class="btn dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>

@@ -42,6 +42,38 @@
     
 
 <style>
+    .btn1{
+        padding: 10px;
+        text-decoration: none;
+        background: rgb(224, 0, 0);
+        color: white
+    }
+    .btn1:hover{
+        color: white;
+        text-decoration: none
+    }
+    .btn2:hover{
+        color:  rgb(224, 0, 0);
+        text-decoration: none
+    }
+    .btn2{
+        padding: 10px;
+        text-decoration: none;
+        border: 1px solid  rgb(224, 0, 0);
+        background:white;
+        color:  rgb(224, 0, 0);
+        width: 100px
+    }
+    h2{
+        text-align: center;
+        font-size: 60px
+    }
+table,tr,th,td{
+    border: 1px solid rgb(224, 0, 0);
+    padding: 10px;
+    text-align: center
+}
+
     .genreDropDownLink
     {
         color: white;
@@ -70,7 +102,7 @@
     }
 </style>
 </head>
-<body  style="background-color: black">
+<body>
     
     <nav class="container-fluid">
         <div class="row pl-5 pr-5">
@@ -101,7 +133,7 @@
                     <button class="btn" id="btnSearch"><i class="fa fa-search"></i></button>
                     <div id="txtSearchContainer">
                         <form action="/movies" method="GET">
-                        <input type="search" name="search" placeholder="Movie Name" class="form-control searchText" >
+                        <input type="search" name="search"placeholder="Movie Name" class="form-control searchText" id="txtSearch">
                         </form>
                     </div>
                     <a href="#" >{{Auth::user()->name}}</a>
@@ -112,7 +144,8 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" style="background-color: rgb(32, 32, 32)">
-                            <li><a href="/logout">Sign Out</a></li>
+                            <li><a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -120,73 +153,8 @@
         </div>
     </nav>
 
-    <header>
-        <video src="/storage/{{ $lastRecord->trailer }}" autoplay loop muted>
-        </video>
-        <div class="container-fluid header-content">
-            <div class="row">
-                <div class="col-md-8 p-5">
-                    
-                    <h1>{{ $lastRecord->name }}</h1>
-                    <h4>{{ $lastRecord->description }}</h4>
-                    <div class="btns-group pt-3">
-                        <button class="header-buttons"><i class="fa fa-play"></i> &nbsp;&nbsp;Play</button>
-                        <button class="header-buttons"><i class="fa fa-plus"></i> &nbsp;&nbsp;My List</button>
-                        <button class="header-buttons"><i class="fa fa-info-circle"></i> &nbsp;&nbsp;More Info</button>
-                    </div>
-                    <h5 class="pt-4" style="color:red;letter-spacing: 2px">ON TRENDING</h5>
-                </div>
-            </div>
-        </div>
-    </header>
+    @yield('content')
 
-
-
-    <section class="popular-sec container-fluid">
-        <div class="row p-5">
-            <div class="col-md-12">
-                <h3>Popular on Neflix</h3>
-                <div class="item-list d-flex" style="overflow: hidden">
-                    <div class="owl-carousel owl-theme">
-                        @foreach ($allMovies as $movie)
-                        <div class="movie-item item" style="background: url('/storage/{{ $movie->coverImage }}')">
-                            <div class="item-inner">
-                                <p>{{ $movie->name }}</p>
-                                <div style="height: 50px; overflow: hidden;">
-                                    <a href="#">{{ $movie->description }}</a>
-                                </div>
-                                <a href="/movie/watch/{{ $movie->id }}" class="playButton"><i class="fa fa-play"></i></a>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </section>
-
-    
-    <section>
-        <h5 class="pt-5 pb-5" style="letter-spacing: 2px;color: white;text-align: center">ALL MOVIES</h5>
-        <div class="container">
-            <div class="row">
-                @foreach ($allMovies as $movie)
-                <div class="movie-item m-2" style="background: url('/storage/{{ $movie->coverImage }}')">
-                    <div class="item-inner">
-                        <p>{{ $movie->name }}</p>
-                        <div style="height: 50px; overflow: hidden;">
-                            <a href="#">{{ $movie->description }}</a>
-                        </div>
-                        <a href="/movie/watch/{{ $movie->id }}" class="playButton"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-       
-    
     <footer p-5>
         <div class="container p-5">
             <div class="row">
@@ -222,12 +190,3 @@
 
         </div>
     </footer>
-
-
-    
-
-  
-
-    
-</body>
-</html>

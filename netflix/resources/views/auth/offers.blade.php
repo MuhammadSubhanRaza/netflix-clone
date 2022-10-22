@@ -7,8 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+ 
+    <title>Netflix</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -25,6 +27,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/signup.css') }}" rel="stylesheet">
 </head>
+<style>
+    button{
+        background: rgb(209, 0, 0);
+        border:none;
+        color: white
+    }
+</style>
 <body>
     
     <nav>
@@ -75,12 +84,18 @@
                         <td style="width: 38%;"></td>
                         <td>
                             <div class="offer-block">
-                                Mobile
+                                <button onclick="btn()">
+                                    Mobile
+                                </button>
+  
                             </div>
                         </td>
                         <td>
                             <div class="offer-block">
-                                Basic
+                                <button onclick="btn1()">
+                                    Basic
+                                </button>
+                                                     
                             </div>
                         </td>
                         <td>
@@ -104,53 +119,53 @@
                      
                     <tr>
                         <td style="width: 40%;text-align: left">Monthly price</td>
-                        <td><b>Rs475</b></td>
-                        <td><b>Rs950</b></td>
-                        <td><b>Rs1,200</b></td>
-                        <td><b>Rs1,500</b></td>
+                        <td id="price1"><b>Rs475</b></td>
+                        <td id="price2"><b>Rs950</b></td>
+                        <td id="price3"><b>Rs1,200</b></td>
+                        <td id="price4"><b>Rs1,500</b></td>
                     </tr>
                      <tr>
                         <td style="width: 40%;text-align: left">Video quality</td>
-                        <td><b>Good</b></td>
-                        <td><b>Good</b></td>
-                        <td><b>Better</b></td>
-                        <td><b>Best</b></td>
+                        <td id="quality1"><b>Good</b></td>
+                        <td id="quality2"><b>Good</b></td>
+                        <td id="quality3"><b>Better</b></td>
+                        <td id="quality4"><b>Best</b></td>
                     </tr>
                      <tr>
                         <td style="width: 40%;text-align: left">Resolution</td>
-                        <td><b>480p</b></td>
-                        <td><b>480p</b></td>
-                        <td><b>1080p</b></td>
-                        <td><b>4K+HDR</b></td>
+                        <td id="resolution1"><b>480p</b></td>
+                        <td id="resolution2"><b>480p</b></td>
+                        <td id="resolution3"><b>1080p</b></td>
+                        <td id="resolution4"><b>4K+HDR</b></td>
                     </tr>
                      <tr>
                         <td style="width: 40%;text-align: left">Devices you can use to watch</td>
                         <td>
                             <div class="text-center" style="width: 40px">
-                                <i class="fa fa-mobile" style="font-size: 1.4rem;color:rgb(102, 102, 102)"></i><br>
-                                <p>Phone</p>
+                                <i id="pic1" class="fa fa-mobile" style="font-size: 1.4rem;color:rgb(102, 102, 102)"></i><br>
+                                <p id="text1">Phone</p>
                             </div>
                             <div class="text-center" style="width: 40px">
-                                <i class="fa fa-tablet" style="font-size: 1.4rem;color:rgb(104, 104, 104)"></i><br>
-                                <p>Tablet</p>
+                                <i id="pic12" class="fa fa-tablet" style="font-size: 1.4rem;color:rgb(104, 104, 104)"></i><br>
+                                <p  id="text2">Tablet</p>
                             </div>
                         </td>
                         <td>
                             <div class="text-center" style="width: 40px">
-                                <i class="fa fa-mobile" style="font-size: 1.4rem;color:rgb(102, 102, 102)"></i><br>
-                                <p>Phone</p>
+                                <i id="pic2" class="fa fa-mobile" style="font-size: 1.4rem;color:rgb(102, 102, 102)"></i><br>
+                                <p id="text32">Phone</p>
                             </div>
                             <div class="text-center" style="width: 40px">
-                                <i class="fa fa-tablet" style="font-size: 1.4rem;color:rgb(104, 104, 104)"></i><br>
-                                <p>Tablet</p>
+                                <i id="pic" class="fa fa-tablet" style="font-size: 1.4rem;color:rgb(104, 104, 104)"></i><br>
+                                <p id="text31">Tablet</p>
                             </div>
                             <div class="text-center" style="width: 40px">
-                                <i class="fa fa-laptop" style="font-size: 1.4rem;color:rgb(102, 102, 102)"></i><br>
-                                <p>Laptop</p>
+                                <i id="laptop1" class="fa fa-laptop" style="font-size: 1.4rem;color:rgb(102, 102, 102)"></i><br>
+                                <p id="laptoptext1">Laptop</p>
                             </div>
                             <div class="text-center" style="width: 40px">
-                                <i class="fa fa-television" style="font-size: 1.4rem;color:rgb(104, 104, 104)"></i><br>
-                                <p>TV</p>
+                                <i id="tv1" class="fa fa-television" style="font-size: 1.4rem;color:rgb(104, 104, 104)"></i><br>
+                                <p id="tvtext1">TV</p>
                             </div>
                         </td>
                         <td>
@@ -208,7 +223,7 @@
         <br>
         <div class="row">
             <div class="col-md-12 text-center">
-                <a href="/movies" class="btnOffer">Next</a>
+                <a href="/plancreate" class="btnOffer">Next</a>
             </div>
         </div>
         <br><br><br><br><br><br>
@@ -241,6 +256,43 @@
         </div>
     </footer>
 
+    <script>
+
+function btn() {
+  
+    document.getElementById("price1").style.color = "red";
+    
+    document.getElementById("quality1").style.color = "red";
+
+    
+    document.getElementById("resolution1").style.color = "red";
+    
+    document.getElementById("pic1").style.color = "red";
+    
+    document.getElementById("pic12").style.color = "red";
+    
+    document.getElementById("text1").style.color = "red";
+    
+    document.getElementById("text2").style.color = "red";
+
+}
+function btn1() {
+  document.getElementById("price2").style.color = "red";
+  document.getElementById("quality2").style.color = "red";
+  document.getElementById("resolution2").style.color = "red";
+  document.getElementById("pic").style.color = "red";
+  document.getElementById("pic2").style.color = "red";
+  document.getElementById("text31").style.color = "red";
+  document.getElementById("text32").style.color = "red";
+  document.getElementById("laptop1").style.color = "red";
+  document.getElementById("laptoptext1").style.color = "red";
+  document.getElementById("tv1").style.color = "red";  
+  document.getElementById("tvtext1").style.color = "red";
+
+}
+
+
+    </script>
 </body>
 </html>
 

@@ -6,8 +6,9 @@
 <title>Dashboard V.1 | Nalika - Material Admin Template</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Netflix</title>
+<link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
 
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
 <style id="" media="all">@font-face {
   font-family: 'Roboto';

@@ -9,7 +9,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Netflix Watch</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -42,10 +44,10 @@
             <div class="col-md-5">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">TVShows</a></li>
+                    <li><a href="#">Generes</a></li>
                     <li><a href="/movies">Movies</a></li>
                     <li><a href="#">Latest</a></li>
-                    <li><a href="#">My List</a></li>
+                    <li><a href="http://localhost:8000/mymovieList">My List</a></li>
                 </ul>
             </div>
             <div class="col-md-6 nav-profile-sec ">
@@ -54,9 +56,9 @@
                     <div id="txtSearchContainer">
                         <input type="text" placeholder="Movie Name" class="form-control searchText" id="txtSearch">
                     </div>
-                    <a href="#">Kids</a>
+                    <a href="#">{{Auth::user()->name}}</a>
                     <button class="btn"><i class="fa fa-bell"></i></button>
-                    <img src="/images/moviecover.jpg" style="height:40px;width: 40px" alt="">
+                    {{-- <img src="/images/moviecover.jpg" style="height:40px;width: 40px" alt=""> --}}
                     <div class="btn-group">
                         <button class="btn dropdown-toggle" data-toggle="dropdown">
                             <span class="caret"></span>
@@ -75,7 +77,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="pt-5 pb-5" style="color: gray">{{ $movie->name }}</h4>
+                <br>
+                <br>
+                <h1  style="color: rgb(212, 0, 0);font-size:1.8rem;text-transform:uppercase;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">{{ $movie->name }}</h1>
+                <h4>{{$movie->description}}</h4>
             </div>
         </div>
     </div>
@@ -96,7 +101,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <a href="/movie/addtolist/{{ $movie->id }}" class="btn btn-warning"><i class="fa fa-plus"></i>&nbsp; Add To My List</a>
+                <form action="/AddMovielist" method="POST">
+                    @csrf
+                    <input type="hidden" value="{{Auth::id()}}" name="userid">
+                    <input type="hidden" value="{{$movie->name}}" name="moviename">
+                    <input type="hidden" value="{{$movie->category}}" name="category">
+                    <input type="hidden" value="{{$movie->description}}" name="description">
+                    <input type="hidden" value="{{$movie->coverImage}}" name="coverimage">
+                    <input type="hidden" value="{{$movie->trailer}}" name="trailer">
+                    <input type="hidden" value="{{$movie->movie}}" name="movie">
+                    <input type="hidden" value="{{$movie->id}}" name="movieid">
+                    
+                    <input type="submit" value="Add to Favourites" style="background:rgb(224, 0, 0);border:none;padding:13px;color:white">
+
+                </form>
             </div>
         </div>
     </div>

@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Netflix Login</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -103,7 +105,7 @@
                     </div>
 
                     <div class="pt-3">
-                        <h5>New to Netflix? &nbsp;&nbsp;<a style="font-size: 1rem" href="#">Sign up now</a></h5>
+                        <h5>New to Netflix? &nbsp;&nbsp;<a style="font-size: 1rem" href="http://localhost:8000">Sign up now</a></h5>
                     </div>
                     <div class="pt-2">
                         <p>This page is protected by Google reCAPTCHA to ensure you're not a bot.

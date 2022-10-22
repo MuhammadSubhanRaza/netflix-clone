@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Netflix Register</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
 </head>
@@ -49,7 +50,7 @@
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>Email Not Unique</strong>
                                     </span>
                                 @enderror
                             </div>
@@ -72,7 +73,10 @@
                                 <input id="password-confirm" placeholder="Confirm Password" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <input type="hidden" value="0" name="PriceplanId">
+                        {{-- <input type="text" value="0"> --}}
 
+                       
 
                         <div class="form-group pt-2">
                             <div>

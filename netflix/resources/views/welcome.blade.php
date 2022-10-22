@@ -8,7 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Netflix Pakistan - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.png')}}" style="width: 50%">
+
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -28,14 +30,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: black">
     
 
     <header>
         <div class="header-inner">
             <nav class="d-flex">
                 <div class="col-md-6">
-                    <img src="/images/nfLogo.png" alt="">
+                    <img src="{{asset('images/nfLogo.png')}}" alt="">
                 </div>
                 <div class="col-md-6 text-right">
                     @guest
@@ -93,7 +95,7 @@
                             Your browser does not support the video tag.
                         </video>
                         <div class="set-image" >
-                            <img src="/images/homepng1.png" class="w-100" alt="">
+                            <img src="{{asset('images/homepng1.png')}}" class="w-100" alt="">
                         </div>
                     </div>
                 </div>
@@ -108,14 +110,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 img-holder text-center">
-                    <img src="/images/homejpg2.jpg" class="w-100" alt="">
+                    <img src="{{asset('images/homejpg2.jpg')}}" class="w-100" alt="">
                     <div class="img-over-loader d-flex">
-                        <img src="/images/moviecover.jpg" height="70px" alt="">
+                        <img src="{{asset('images/moviecover.jpg')}}" height="70px" alt="">
                         <div>
                             <h5>London has Fallen</h5>
                             <p>Downloading...</p>
                         </div>
-                        <img src="/images/loaderImage.gif" style="margin-left: 50px; margin-top:20px" height="30px" alt="">
+                        <img src="{{asset('images/loaderImage')}}" style="margin-left: 50px; margin-top:20px" height="30px" alt="">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -150,7 +152,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="/images/homepng3.png" class="w-100 mt-5" alt="">
+                    <img src="{{asset('images/homepng3.png')}}" class="w-100 mt-5" alt="">
                 </div>
                 <div class="col-md-6">
                     <h1>Create profiles for kids.</h1>
